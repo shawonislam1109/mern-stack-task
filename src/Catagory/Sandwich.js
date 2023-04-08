@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from "react";
-import Food from "../Component/Food/Food";
+import React, { useEffect, useState } from 'react';
+import Food from '../Component/Food/Food';
 
-const Barger = () => {
+const Sandwich = () => {
     const [product, setProduct] = useState([]);
     useEffect(() => {
-      fetch("Barger.json")
+      fetch("sandwiches.json")
         .then((res) => res.json())
         .then((data) => setProduct(data));
     }, []);
@@ -21,4 +21,4 @@ const Barger = () => {
     );
 };
 
-export default Barger;
+export default Sandwich;

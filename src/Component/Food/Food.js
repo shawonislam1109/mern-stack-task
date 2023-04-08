@@ -13,7 +13,7 @@ const Food = ({product}) => {
         <p className="flex text-orange-500 font-bold justify-normal items-center text-xl "><FaStar />{product.rate}</p>
       </div>
       <figure>
-        <img src={product.img} alt="Shoes" />
+        <img src={product.img} alt="Food Pic" />
       </figure>
       <div className="card-body">
         <h2 className="text-xl font-semibold text-orange-500">
@@ -25,7 +25,12 @@ const Food = ({product}) => {
             : product.dsc}
         </p>
         <p className="font-semibold">Country : {product.country }</p>
-        <p className="text-xl font-bold  text-orange-500">Price : {product.price}</p>
+        <div>
+          {
+            pathname.includes("booking") && <p className="font-bold">Quantity : {product.quantity}</p>
+          }
+        </div>
+        <p className="text-xl font-bold  text-orange-500">Price : $ {product.price}</p>
         <div className="card-actions justify-end">
           {pathname.includes("booking") && (
             <button onClick={()=> dispatch ({type: REMOVE_CART, payload : product})} className="btn btn-error">Delete</button>

@@ -1,14 +1,13 @@
-import React, {useEffect, useState} from "react";
-import Food from "../Component/Food/Food";
+import React, { useEffect, useState } from 'react';
+import Food from '../Component/Food/Food';
 
-const Barger = () => {
+const Breads = () => {
     const [product, setProduct] = useState([]);
     useEffect(() => {
-      fetch("Barger.json")
+      fetch("Breads.json")
         .then((res) => res.json())
         .then((data) => setProduct(data));
     }, []);
-    console.log(product)
     return (
         <div>
              <div className="grid grid-cols-1 mt-8 md:mt-0 md:grid-cols-2 lg:grid-cols-3 w-9/12 mx-auto gap-3">
@@ -21,4 +20,5 @@ const Barger = () => {
     );
 };
 
-export default Barger;
+
+export default Breads;
