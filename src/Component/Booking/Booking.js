@@ -18,7 +18,9 @@ const Booking = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-9/12 mx-auto gap-3">
         {state &&
-          state.map((product) => (
+          state
+          .sort((a,b)=> a._id - b._id)
+          .map((product) => (
             <Food product={product} key={product.idCategory} />
           ))}
       </div>

@@ -19,7 +19,7 @@ const HOme = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="dropdown-content menu p-2 shadow font-bold mt-2 bg-orange-500 text-black rounded-box w-52">
+                className="dropdown-content menu p-2 shadow font-bold mt-1 bg-orange-500 text-black rounded-box w-52">
                 <li>
                  <Link to='/'>Buger</Link>
                 </li>
