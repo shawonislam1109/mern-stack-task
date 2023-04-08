@@ -4,6 +4,7 @@ import HOme from '../Component/HOme'
 import Booking from "../Component/Booking/Booking";
 import Contact from "../Component/Contact/Contact";
 import About from "../Component/About/About";
+import Barger from "../Catagory/Barger";
 
 
 export const route = createBrowserRouter([
@@ -13,7 +14,13 @@ export const route = createBrowserRouter([
         children: [
             {
                 path: '/',
-               element: <HOme/>
+               element: <HOme/>,
+               children: [
+                {
+                    path: '/',
+                    element: <Barger/>
+                }
+               ]
             },
             {
                 path: '/booking',

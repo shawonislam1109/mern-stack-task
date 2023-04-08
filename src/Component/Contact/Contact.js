@@ -5,10 +5,10 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 const Contact = () => {
   return (
     <div className="w-9/12 mx-auto my-10  ">
-      <div className=" bg-base-200 backgrounds">
+      <div className="  backgrounds">
         <div className="">
             <div>
-                <h1 className="text-center text-3xl font-bold pt-3">Contact Us</h1>
+                <h1 className="text-center text-red-500 text-3xl font-bold pt-3">Contact Us</h1>
                 <div className="flex items-center justify-center text-2xl">
                     <FaFacebook/>
                     <FaInstagram  className="ml-2"/>
@@ -18,7 +18,7 @@ const Contact = () => {
           <div className="card-body w-9/12 mx-auto ">
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-3xl font-semibold ">Name</span>
+                <span className="label-text text-3xl text-red-500 font-semibold ">Name</span>
               </label>
               <input
                 type="text"
@@ -28,7 +28,7 @@ const Contact = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-3xl font-semibold">Email</span>
+                <span className="label-text text-3xl text-red-500 font-semibold">Email</span>
               </label>
               <input
                 type="text"
@@ -38,7 +38,7 @@ const Contact = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-3xl font-semibold">
+                <span className="label-text text-3xl text-red-500 font-semibold">
                   Message
                 </span>
               </label>
@@ -47,7 +47,7 @@ const Contact = () => {
                 className="textarea rounded-md text-xl textarea-bordered textarea-lg w-full h-72"></textarea>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary rounded-md font">
+              <button className="btn btn-error text-white rounded-md font">
                 Send Message
               </button>
             </div>

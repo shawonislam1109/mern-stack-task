@@ -1,32 +1,37 @@
-import React, {useEffect, useState} from "react";
+
 import Food from "./Food/Food";
 import Carsoual from "./Food/Carsoual";
+import { Link, Outlet } from "react-router-dom";
 
 const HOme = () => {
-  const [product, setProduct] = useState([]);
-  useEffect(() => {
-    fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
-      .then((res) => res.json())
-      .then((data) => setProduct(data));
-  }, []);
 
-  const PRODUCT = product.categories;
-
-  console.log(PRODUCT)
 
   return (
-  <div>
     <div>
-      <Carsoual/>
-      <h1 className="w-9/12 mx-auto text-3xl font-semibold text-orange-500 py-5">This is our Food</h1>
+      <div>
+        <Carsoual />
+        <div className="flex">
+          <h1 className="w-9/12 mx-auto font text-3xl font-serif text-orange-500 py-5">
+            THIS IS OUR FOOD{" "}
+          </h1>
+          <div className="mr-10 flex justify-around items-center">
+            <h1 className="text-3xl text-orange-500 mr-2 font-bold">Catagory : </h1>
+            <select className="select select-secondary rounded-md ">
+              <option disabled selected className=" font-serif text-black">
+                Pick your favorite Food 
+              </option>
+            <option className=" font-serif text-black"><Link>Barger</Link></option>
+            <option className=" font-serif text-black"><Link>Barger</Link></option>
+            <option className=" font-serif text-black"><Link>Barger</Link></option>
+            <option className=" font-serif text-black"><Link>Barger</Link></option>
+            <option className=" font-serif text-black"><Link>Barger</Link></option>
+            <option className=" font-serif text-black"><Link>Barger</Link></option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <Outlet/>
     </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-9/12 mx-auto gap-3">
-        {PRODUCT &&
-          PRODUCT.map((product) => (
-            <Food product={product} key={product.idCategory} />
-          ))}
-    </div>
-  </div>
   );
 };
 
