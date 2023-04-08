@@ -3,6 +3,7 @@ import {useDispatch} from "react-redux";
 import {PRODUCT_CART, REMOVE_CART} from "../../Reducer/ProductReducer/actionType";
 import {useLocation} from "react-router-dom";
 import { FaStar } from "react-icons/fa";
+import toast, { Toaster } from 'react-hot-toast';
 
 const Food = ({product}) => {
   const dispatch = useDispatch();
@@ -37,7 +38,7 @@ const Food = ({product}) => {
           )}
           {!pathname.includes("booking") && (
             <button
-              onClick={() => dispatch({type: PRODUCT_CART, payload: product})}
+              onClick={() => dispatch({type: PRODUCT_CART, payload: product}, toast.success('Successfull Added food in you cart')) }
               className="btn btn-primary">
               Buy Now
             </button>
